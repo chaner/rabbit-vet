@@ -1,0 +1,16 @@
+{
+  "name": "rabbit-vet",
+  "version": "0.0.1",
+  "description": "Important Rabbit Health Checks",
+  "main": "index.js",
+  "scripts": {
+    "start": "coffee src",
+    "test": "NODE_ENV=test grunt test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.2.1"
+  }
+}
