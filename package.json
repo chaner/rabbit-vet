@@ -9,6 +9,11 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "coffee-script": "~1.10.0",
+    "express": "^4.13.4",
+    "superagent": "^1.7.2"
+  },
   "devDependencies": {
     "mocha": "^2.4.5",
     "should": "^8.2.1"
