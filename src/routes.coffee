@@ -8,7 +8,6 @@ module.exports =
     .end (err, response) ->
       return res.json err if err
       host_map = {}
-
       response?.body.map (connection) ->
         key = "#{connection.connection_details.peer_host}:#{connection.connection_details.peer_port}"
         host_map[key] ||= 0
