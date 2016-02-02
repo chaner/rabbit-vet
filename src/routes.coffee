@@ -8,9 +8,11 @@ module.exports =
     .end (err, response) ->
       return res.json err if err
       host_map = {}
+
       response?.body.map (connection) ->
-        host_map[connection.connection_details.peer_host] ||= 0
-        host_map[connection.connection_details.peer_host] += connection.number
+        key = "#{connection.connection_details.peer_host}:#{connection.connection_details.peer_port}"
+        host_map[key] ||= 0
+        host_map[key]++
       res.json host_map
   connections: (req, res) ->
     request.get("https://#{req.query.subdomain}.rmq.cloudamqp.com/api/connections")
@@ -20,7 +22,7 @@ module.exports =
       return res.json err if err
       host_map = {}
       response?.body.map (connection) ->
-        host_map[connection.peer_host] ||= 0
-        host_map[connection.peer_host]++
-
+        key = "#{connection.peer_host}:#{connection.peer_port}"
+        host_map[key] ||= 0
+        host_map[key]++
       res.json host_map

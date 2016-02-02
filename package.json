@@ -20,7 +20,8 @@
     "jade": "^1.11.0",
     "mincer": "^1.4.1",
     "path": "^0.12.7",
-    "superagent": "^1.7.2"
+    "superagent": "^1.7.2",
+    "superagent-no-cache": "^0.1.0"
   },
   "devDependencies": {
     "mocha": "^2.4.5",

@@ -7,18 +7,10 @@ script(type='text/ng-template' id='environment')
       tr
         th host
         th channels
-    tbody
-      tr(ng-repeat='(host, count) in channels | orderBy: -count')
-        td {{host}}
-        td {{count}}
-      
-  h3 Connections
-  table.table.table-striped
-    thead
-      tr
-        th host
         th connections
     tbody
-      tr(ng-repeat='(host, count) in connections | orderBy: -count')
-        td {{host}}
-        td {{count}}
+      tr(ng-repeat='channel in channels | orderBy: "-count"')
+        td 
+          a(ng-href="https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:search={{channel.host.split(':')[0]}};sort=instanceId") {{channel.host}}
+        td {{channel.count}}
+        td {{connections[channel.host]}}
