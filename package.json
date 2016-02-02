@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "coffee src",
+    "postinstall": "bower install",
     "test": "NODE_ENV=test grunt test"
   },
   "author": "",
