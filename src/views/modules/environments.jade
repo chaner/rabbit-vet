@@ -1,0 +1,8 @@
+script(type='text/ng-template' id='environments')
+  h1 Environments
+  ul.list-group
+    li.list-group-item(ng-repeat='(name, env) in environments track by name')
+      a(ui-sref='environment({id: name})') {{name}}
+  pre {{environments  | json}}
+  textarea.form-control(ng-model='import_data')
+  button.btn.btn-primary(ng-click='save()') Import

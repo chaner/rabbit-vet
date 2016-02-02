@@ -1,0 +1,24 @@
+script(type='text/ng-template' id='environment')
+  a(ui-sref='environments') Back
+  h1 {{name}}
+  h3 Channels
+  table.table.table-striped
+    thead
+      tr
+        th host
+        th channels
+    tbody
+      tr(ng-repeat='(host, count) in channels | orderBy: -count')
+        td {{host}}
+        td {{count}}
+      
+  h3 Connections
+  table.table.table-striped
+    thead
+      tr
+        th host
+        th connections
+    tbody
+      tr(ng-repeat='(host, count) in connections | orderBy: -count')
+        td {{host}}
+        td {{count}}

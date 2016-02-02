@@ -1,0 +1,12 @@
+doctype html
+html(lang='en'
+    manifest=process.env.NODE_ENV&&process.env.NODE_ENV!='development'?'application.appcache':''
+    ng-app='app')
+  head
+    block headScripts
+    block templates
+    title Rabbit Veterinarian
+    block css
+  body
+    block content
+    block scripts

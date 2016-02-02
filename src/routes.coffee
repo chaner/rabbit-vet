@@ -6,7 +6,7 @@ module.exports =
     .set('Accept', 'application/json')
     .set('Authorization', req.headers.authorization)
     .end (err, response) ->
-      res.json err if err
+      return res.json err if err
       host_map = {}
       response?.body.map (connection) ->
         host_map[connection.connection_details.peer_host] ||= 0
@@ -17,9 +17,10 @@ module.exports =
     .set('Accept', 'application/json')
     .set('Authorization', req.headers.authorization)
     .end (err, response) ->
-      res.json err if err
+      return res.json err if err
       host_map = {}
       response?.body.map (connection) ->
         host_map[connection.peer_host] ||= 0
         host_map[connection.peer_host]++
+
       res.json host_map

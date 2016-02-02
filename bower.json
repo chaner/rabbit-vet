@@ -1,0 +1,24 @@
+{
+  "name": "rabbit-vet",
+  "description": "Important Rabbit Health Checks",
+  "main": "index.js",
+  "authors": [
+    "Eric Chan <eric.chan@socialchorus.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/chaner/rabbit-vet",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.4.9",
+    "angular-ui-router": "^0.2.17",
+    "bootstrap": "^3.3.6"
+  }
+}
