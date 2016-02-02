@@ -1,5 +1,4 @@
 #= require runfirst.coffee
-#= require_tree ./directives
 #= require_tree ./modules
 #= require_tree ./services
 
