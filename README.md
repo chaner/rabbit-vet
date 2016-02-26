@@ -5,15 +5,15 @@ Uses your browser local storage for credentials.
 
     {
       "Staging": {
-        "subdomain": "velveteen-rabbit",
+        "domain": "http://velveteen-rabbit.yourdomain.com",
         "authorization": "Basic blahlbalhlblahlalkskdfjsd"
       },
       "QA": {
-        "subdomain": "pink-fish",
+        "domain": "http://pink-fish.yourdomain.com",
         "authorization": "Basic blahlbalhlblahlalkskdfjsd"
       },
       "Production": {
-        "subdomain": "grey-meerkat",
+        "domain": "http://grey-meerkat.yourdomain.com",
         "authorization": "Basic blahlbalhlblahlalkskdfjsd"
       }
     }

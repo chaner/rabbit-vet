@@ -4,14 +4,14 @@ class EnvironmentCtrl
     $scope.environment = JSON.parse(localstorage.get('environments'))[$stateParams.id]
     $scope.hosts = {}
     $http({
-      url: "/channels?subdomain=#{$scope.environment.subdomain}",
+      url: "/channels?domain=#{$scope.environment.domain}",
       method: 'GET',
       headers: {authorization: $scope.environment.authorization}
       }).then (data) ->
         $scope.channels = ({host: key, count: val} for key, val of data.data)
         $scope.channel_count = $scope.channels.reduce ((total, item) -> total + item.count), 0
     $http({
-      url: "/connections?subdomain=#{$scope.environment.subdomain}",
+      url: "/connections?domain=#{$scope.environment.domain}",
       method: 'GET',
       headers: {authorization: $scope.environment.authorization}
       }).then (data) ->

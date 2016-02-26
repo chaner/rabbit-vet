@@ -2,7 +2,7 @@ request = require 'superagent'
 
 module.exports =
   channels: (req, res) ->
-    request.get("https://#{req.query.subdomain}.rmq.cloudamqp.com/api/channels")
+    request.get("https://#{req.query.domain}/api/channels")
     .set('Accept', 'application/json')
     .set('Authorization', req.headers.authorization)
     .end (err, response) ->
@@ -14,7 +14,7 @@ module.exports =
         host_map[key]++
       res.json host_map
   connections: (req, res) ->
-    request.get("https://#{req.query.subdomain}.rmq.cloudamqp.com/api/connections")
+    request.get("https://#{req.query.domain}/api/connections")
     .set('Accept', 'application/json')
     .set('Authorization', req.headers.authorization)
     .end (err, response) ->
